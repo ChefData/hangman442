@@ -35,6 +35,8 @@ The aim of this project is to test my knowledge in the python programming langua
 - Used an if statement to communcate validaty of input back to the user
 - Updated the GitHub repository with the latest code changes from your local project
 - Refactored and optimised code to inculde meaningfull names and eliminate code duplication
+- Created a while loop to continuously ask for user input if input was entered incorrectly
+- Defined functions to abstract code 
 
 ## Installation instructions
 
