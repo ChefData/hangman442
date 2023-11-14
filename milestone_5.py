@@ -1,4 +1,5 @@
 import random
+from urllib.request import urlopen
 
 # word: The word to be guessed, picked randomly from the word_list. Remember to import the random module into your script
 # word_guessed: list - A list of the letters of the word, with _ for each letter not yet guessed. For example, if the word is 'apple', the word_guessed list would be ['_', '_', '_', '_', '_']. If the player guesses 'a', the list would be ['a', '_', '_', '_', '_']
@@ -8,9 +9,12 @@ import random
 # list_of_guesses: list - A list of the guesses that have already been tried. Set this to an empty list initially
 
 class Hangman:
-    def __init__(self, word_list, num_lives=5):
+
+    num_lives=5
+
+    def __init__(self, word_list):
         self.word_list = word_list
-        self.num_lives = num_lives
+        self.num_lives = self.__class__.num_lives
         self.word = random.choice(self.word_list)
         self.word_guessed = ['_'] * len(self.word)
         self.num_letters = len(self.word)
@@ -43,20 +47,22 @@ class Hangman:
                 break 
 
 def play_game(word_list):
-    num_lives = 5
-    game = Hangman(word_list, num_lives)
+    game = Hangman(word_list)
     while True:
         if game.num_lives == 0:
             print("You lost!")
+            print(f"The correct word was: {game.word}")
             break
         elif game.num_letters > 0:
             game.ask_for_input()
-            print(f"Letters guessed: {game.list_of_guesses}")
-            print(f"Correct letters: {game.word_guessed}")
+            print(f"Letters guessed: {', '.join(set(game.list_of_guesses))}")
+            print(f"Incorrect guesses: {', '.join(set(game.list_of_guesses) - set(game.word_guessed))}")
+            print(f"Correct letters: {' '.join(game.word_guessed)}")
         else:
-            print("Congratulations. You won the game!")
+            print("Congratulations. You won the game! The correct word was: {game.word}")
             break
 
+word_site = urlopen("https://www.mit.edu/~ecprice/wordlist.10000")
+word_list = word_site.read().decode().splitlines()
 
-word_list = ["Mango", "Pineapple", "Mangosteen", "Lychee", "Fig"]
 play_game(word_list)
