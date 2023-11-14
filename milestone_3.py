@@ -11,8 +11,8 @@ def check_guess(guess):
         print(f"Sorry, {lower_case_guess} is not in the word. Try again.")
 
 def ask_for_input():
-    letter_guess = input("Enter a single letter: ")
     while True:
+        letter_guess = input("Enter a single letter: ")
         if len(letter_guess) == 1 and letter_guess.isalpha():
             break
         else:
