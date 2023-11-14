@@ -50,6 +50,7 @@ The aim of this project is to test my knowledge in the python programming langua
 - Used the .append() method to append the guess to the list_of_guesses
 - Used a for-loop to replace the underscore(s) in the word_guessed with the letter guessed by the user
 - Extended an if statment to include an else statment that defines what happens if the guess is not in the word
+- Create an instance of the class
 
 ## Installation instructions
 
@@ -58,6 +59,6 @@ The aim of this project is to test my knowledge in the python programming langua
 
 
 ## File structure of the project
-
+The project is built around 4 milestone python files which increase in complexity to reach the finished game
 
 ## License information
