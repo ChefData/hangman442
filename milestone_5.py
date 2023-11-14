@@ -10,7 +10,7 @@ from urllib.request import urlopen
 
 class Hangman:
 
-    num_lives=5
+    num_lives = int(input("How many lives would you like? "))
 
     def __init__(self, word_list):
         self.word_list = word_list
@@ -25,6 +25,7 @@ class Hangman:
         lower_case_word = self.word.lower()
         if lower_case_guess in lower_case_word:
             print(f"Good guess! {lower_case_guess} is in the word.")
+            print(f"You still have {self.num_lives} lives left.")
             for char in range(len(lower_case_word)):
                 if lower_case_word[char] == lower_case_guess:
                     self.word_guessed[char] = lower_case_guess
@@ -36,6 +37,7 @@ class Hangman:
 
     def ask_for_input(self):
         while True:
+            print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             letter_guess = input("Enter a single letter: ")
             if not letter_guess.isalpha() or len(letter_guess) != 1:
                 print("Invalid letter. Please, enter a single alphabetical character.")
@@ -59,7 +61,7 @@ def play_game(word_list):
             print(f"Incorrect guesses: {', '.join(set(game.list_of_guesses) - set(game.word_guessed))}")
             print(f"Correct letters: {' '.join(game.word_guessed)}")
         else:
-            print("Congratulations. You won the game! The correct word was: {game.word}")
+            print(f"Congratulations. You won the game! The correct word was: {game.word}")
             break
 
 word_site = urlopen("https://www.mit.edu/~ecprice/wordlist.10000")
