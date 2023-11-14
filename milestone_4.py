@@ -14,13 +14,16 @@ class Hangman:
         self.word_guessed = ['_'] * len(self.word)
         self.num_letters = len(set(self.word))
         self.num_lives = num_lives
-        
         self.list_of_guesses = []
 
     def check_guess(self, guess):
         lower_case_guess = guess.lower()
         if lower_case_guess in self.word:
             print(f"Good guess! {lower_case_guess} is in the word.")
+            for char in range(len(self.word)):
+                if self.word[char] == lower_case_guess:
+                    self.word_guessed[char] = lower_case_guess
+            self.num_letters -= 1
         else:
             print(f"Sorry, {lower_case_guess} is not in the word. Try again.")
 
