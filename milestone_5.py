@@ -55,7 +55,7 @@ def play_game(word_list):
     game = Hangman(word_list)
     while True:
         if game.num_lives == 0:
-            print("You lost!")
+            print("\nYou lost!")
             print(f"The correct word was: {game.word}")
             break
         elif game.num_letters > 0:
@@ -64,7 +64,7 @@ def play_game(word_list):
             print(f"Incorrect guesses: {', '.join(set(game.list_of_guesses) - set(game.word_guessed))}")
             print(f"Correct letters: {' '.join(game.word_guessed)}")
         else:
-            print(f"Congratulations. You won the game! The correct word was: {game.word}")
+            print(f"\nCongratulations. You won the game! The correct word was: {game.word}")
             break
 
 word_site = urlopen("https://www.mit.edu/~ecprice/wordlist.10000")
