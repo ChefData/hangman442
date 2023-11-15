@@ -10,7 +10,13 @@ from urllib.request import urlopen
 
 class Hangman:
 
-    num_lives = int(input("How many lives would you like? "))
+    while True:
+        num_lives = input("How many lives would you like? ")
+        if not num_lives.isdigit():
+            print("\nInvalid number. Please, enter a number.")
+        else:
+            num_lives = int(num_lives)
+            break 
 
     def __init__(self, word_list):
         self.word_list = word_list
@@ -35,8 +41,7 @@ class Hangman:
 
     def ask_for_input(self):
         while True:
-            print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            letter_guess = input("Enter a single letter: ").lower()
+            letter_guess = input("\nEnter a single letter: ").lower()
             if not letter_guess.isalpha() or len(letter_guess) != 1:
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif letter_guess in self.list_of_guesses:
