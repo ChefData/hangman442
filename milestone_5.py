@@ -15,30 +15,28 @@ class Hangman:
     def __init__(self, word_list):
         self.word_list = word_list
         self.num_lives = self.__class__.num_lives
-        self.word = random.choice(self.word_list)
+        self.word = random.choice(self.word_list).lower()
         self.word_guessed = ['_'] * len(self.word)
         self.num_letters = len(self.word)
         self.list_of_guesses = []
 
     def check_guess(self, guess):
-        lower_case_guess = guess.lower()
-        lower_case_word = self.word.lower()
-        if lower_case_guess in lower_case_word:
-            print(f"Good guess! {lower_case_guess} is in the word.")
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
             print(f"You still have {self.num_lives} lives left.")
-            for char in range(len(lower_case_word)):
-                if lower_case_word[char] == lower_case_guess:
-                    self.word_guessed[char] = lower_case_guess
+            for char in range(len(self.word)):
+                if self.word[char] == guess:
+                    self.word_guessed[char] = guess
                     self.num_letters -= 1
         else:
             self.num_lives -= 1
-            print(f"Sorry, {lower_case_guess} is not in the word. Try again.")
+            print(f"Sorry, {guess} is not in the word. Try again.")
             print(f"You have {self.num_lives} lives left.")
 
     def ask_for_input(self):
         while True:
             print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            letter_guess = input("Enter a single letter: ")
+            letter_guess = input("Enter a single letter: ").lower()
             if not letter_guess.isalpha() or len(letter_guess) != 1:
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif letter_guess in self.list_of_guesses:
