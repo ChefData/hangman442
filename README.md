@@ -125,4 +125,4 @@ hangman442/
 - AiCore: Educational programme for tasks and milestones used for development progression
 
 ## License information
-This project is licensed under the MIT License
+This project is not licensed
