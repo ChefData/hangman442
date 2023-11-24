@@ -105,16 +105,16 @@ The aim of this project is to test my knowledge in the python programming langua
 The project is built around 4 milestone python files which increase in complexity to reach the finished game
 
 hangman442/
-│
-├── milestone_2.py
-│
-├── milestone_3.py
-│
-├── milestone_4.py
-│
-├── hangman.py
-│
-└── README.md
+|
+|-- milestone_2.py
+|
+|-- milestone_3.py
+|
+|-- milestone_4.py
+|
+|-- hangman.py
+|
+|-- README.md
 
 ## Tools Used
 - Python: Programming language used for the game logic.
