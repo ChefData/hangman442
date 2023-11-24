@@ -53,12 +53,68 @@ The aim of this project is to test my knowledge in the python programming langua
 - Create an instance of the class
 
 ## Installation instructions
+### Windows
+1. Install [Git](https://git-scm.com/download/win).
+2. Open the command prompt or Git Bash.
+3. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/ChefData/hangman442
+    ```
 
+### macOS
+1. Open the Terminal.
+2. If you don't have Git installed, you can install it using [Homebrew](https://brew.sh/):
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install git
+    ```
+3. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/ChefData/hangman442
+    ```
+
+### Linux
+1. Open the terminal.
+2. Install Git:
+    - On Ubuntu or Debian-based systems:
+        ```bash
+        sudo apt-get update
+        sudo apt-get install git
+        ```
+    - On Fedora:
+        ```bash
+        sudo dnf install git
+        ```
+3. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/ChefData/hangman442
+    ```
 
 ## Usage instructions
-
+1. Navigate to the project directory:
+    ```bash
+    cd hangman442
+    ```
+2. Run the Hangman game script:
+    ```bash
+    python hangman.py
+    ```
+3. Follow the on-screen instructions to play the game.
 
 ## File structure of the project
 The project is built around 4 milestone python files which increase in complexity to reach the finished game
 
+hangman442/
+│
+├── milestone_2.py
+│
+├── milestone_3.py
+│
+├── milestone_4.py
+│
+├── hangman.py
+│
+└── README.md
+
 ## License information
+This project is licensed under the MIT License
