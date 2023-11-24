@@ -116,5 +116,13 @@ hangman442/
 │
 └── README.md
 
+## Tools Used
+- Python: Programming language used for the game logic.
+- Git: Version control system for tracking changes in the project.
+- GitHub: Hosting platform for version control and collaboration.
+- Visual Studio Code: Code editor used for development.
+- URL ("https://www.mit.edu/~ecprice/wordlist.10000"): Word list used to populate the project
+- AiCore: Educational programme for tasks and milestones used for development progression
+
 ## License information
 This project is licensed under the MIT License
